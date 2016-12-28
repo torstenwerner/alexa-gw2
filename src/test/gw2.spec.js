@@ -3,6 +3,12 @@
 const assert = require('assert');
 const gw2 = require('../gw2');
 
+describe('GW2TOKEN', function () {
+    it('must be configured', function () {
+        assert(gw2.isTokenConfigured());
+    });
+});
+
 describe('my wallet', function () {
     it('should have a reasonable amount of gold', function () {
         return gw2.fetchCoins()

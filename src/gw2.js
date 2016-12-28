@@ -7,6 +7,10 @@ const headers = {
     Authorization: "Bearer " + process.env.GW2TOKEN
 };
 
+exports.isTokenConfigured = function () {
+    return !!process.env.GW2TOKEN;
+}
+
 function findCoins(allItems) {
     return _.find(allItems, item => item.id == 1).value;
 }

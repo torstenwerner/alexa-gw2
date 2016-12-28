@@ -66,6 +66,8 @@ describe('the CoinIntent', function () {
     this.timeout(5000);
 
     it('should tell the amount of gold', function (done) {
+        assert(!!process.env.HOME);
+
         const params = {
             FunctionName: 'GuildWars',
             Payload: JSON.stringify(getBasePayload())
