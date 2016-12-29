@@ -1,2 +1,6 @@
 node_modules
 npm-debug.log
+*.js.map
+
+# temporary for typescript transition:
+gw2.js

@@ -1,4 +1,9 @@
-// Platzieren Sie Ihre Einstellungen in dieser Datei, um Standard- und Benutzereinstellungen zu überschreiben.
 {
-    "mocha.files.glob": "src/test/**/*.js"
+    "mocha.files.glob": "src/test/**/*.js",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.js": {"when": "$(basename).ts"},
+        "**/*.map": {"when": "$(basename).map"}
+    }
 }
