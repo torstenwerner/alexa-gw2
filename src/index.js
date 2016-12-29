@@ -18,12 +18,12 @@ var handlers = {
     },
     'TellCoins': function () {
         gw2.fetchCoins()
-            .then(coins => 'Du besitzt ' + coins.gold + ' Gold, ' + coins.silver + ' Silber und ' + coins.copper + ' Bronze.')
+            .then(coins => `Du besitzt ${coins.gold} Gold, ${coins.silver} Silber und ${coins.copper} Bronze.`)
             .then(message => this.emit(':tell', message));
     },
     'AccountIntent': function () {
         gw2.fetchAccount()
-            .then(account => 'Hallo ' + account.shortName + '! Du spielst in der Welt ' + account.worldName + ' und hast den WVW-Rang ' + account.wvw_rank + '.')
+            .then(account => `Hallo ${account.shortName}! Du spielst in der Welt ${account.worldName} und hast den WVW-Rang ${account.wvw_rank}.`)
             .then(message => this.emit(':tell', message));
     }
 };
