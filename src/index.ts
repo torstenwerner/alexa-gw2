@@ -1,5 +1,3 @@
-'use strict';
-
 const Alexa = require("alexa-sdk");
 const gw2 = require('./gw2');
 
