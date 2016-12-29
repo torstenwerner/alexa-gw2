@@ -14,9 +14,9 @@ function findCoins(allItems): number {
 }
 
 export interface Coins {
-    gold: number;
-    silver: number;
-    copper: number;
+    readonly gold: number;
+    readonly silver: number;
+    readonly copper: number;
 }
 
 function toCoins(coins: number): Coins {
