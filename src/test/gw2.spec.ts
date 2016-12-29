@@ -1,7 +1,5 @@
-'use strict'
-
 const should = require('chai').should();
-const gw2 = require('../gw2');
+import gw2 = require('../gw2');
 
 describe('GW2TOKEN', function () {
     it('must be configured', function () {

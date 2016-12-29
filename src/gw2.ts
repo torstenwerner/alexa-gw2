@@ -5,7 +5,7 @@ const headers = {
     Authorization: "Bearer " + process.env.GW2TOKEN
 };
 
-exports.isTokenConfigured = function () {
+export function isTokenConfigured() {
     return !!process.env.GW2TOKEN;
 }
 
@@ -21,7 +21,7 @@ function asObject(coins) {
     }
 }
 
-exports.fetchCoins = function () {
+export function fetchCoins() {
     return fetch('https://api.guildwars2.com/v2/account/wallet', { headers })
         .then(result => result.json())
         .then(findCoins)
@@ -40,7 +40,7 @@ function moreInfo(account) {
         })
 }
 
-exports.fetchAccount = function () {
+export function fetchAccount() {
     return fetch('https://api.guildwars2.com/v2/account', { headers })
         .then(result => result.json())
         .then(moreInfo);

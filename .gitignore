@@ -5,3 +5,4 @@ npm-debug.log
 # temporary for typescript transition:
 gw2.js
 index.js
+gw2.spec.js
