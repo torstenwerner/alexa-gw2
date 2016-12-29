@@ -1,8 +1,4 @@
 node_modules
 npm-debug.log
+*.js
 *.js.map
-
-# temporary for typescript transition:
-gw2.js
-index.js
-gw2.spec.js
