@@ -9,11 +9,17 @@ export function isTokenConfigured() {
     return !!process.env.GW2TOKEN;
 }
 
-function findCoins(allItems) {
+function findCoins(allItems): number {
     return _.find(allItems, item => item.id == 1).value;
 }
 
-function asObject(coins) {
+export interface Coins {
+    gold: number;
+    silver: number;
+    copper: number;
+}
+
+function toCoins(coins: number): Coins {
     return {
         gold: Math.trunc(coins / 10000),
         silver: Math.trunc(coins / 100) % 100,
@@ -21,11 +27,11 @@ function asObject(coins) {
     }
 }
 
-export function fetchCoins() {
+export function fetchCoins(): Promise<Coins> {
     return fetch('https://api.guildwars2.com/v2/account/wallet', { headers })
         .then(result => result.json())
         .then(findCoins)
-        .then(asObject);
+        .then(toCoins);
 };
 
 function moreInfo(account) {
