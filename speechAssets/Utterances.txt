@@ -2,3 +2,5 @@ CoinIntent wieviel gold ich habe
 CoinIntent wieviel gold habe ich
 AccountIntent wer ich bin
 AccountIntent wer bin ich
+HelpIntent um Hilfe
+HelpIntent nach Hilfe

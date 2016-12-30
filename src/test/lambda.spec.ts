@@ -95,3 +95,23 @@ describe('the AccountIntent', function () {
         });
     });
 });
+
+describe('the HelpIntent', function() {
+    it('should send a card', function(done) {
+        const payload = getBasePayload();
+        payload.request.intent.name = 'HelpIntent';
+        const params = {
+            FunctionName: 'GuildWars',
+            Payload: JSON.stringify(payload)
+        };
+        lambda.invoke(params, function (err, data) {
+            const regex = /Ich habe dir Informationen an die Alexa-App geschickt\./;
+            launchCheck(err, data, regex);
+            const payloadOut = JSON.parse(data.Payload);
+            const card = payloadOut.response.card;
+            assert.equal(card.title, 'Guild Wars');
+            assert.equal(card.content, `Deine User-Id ist: ${payload.session.user.userId}.`)
+            done();
+        });        
+    });
+});

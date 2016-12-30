@@ -23,5 +23,10 @@ var handlers = {
         gw2.fetchAccount()
             .then(account => `Hallo ${account.shortName}! Du spielst in der Welt ${account.worldName} und hast den WVW-Rang ${account.wvw_rank}.`)
             .then(message => this.emit(':tell', message));
+    },
+    'HelpIntent': function() {
+        const userId = this.event.session.user.userId;
+        this.emit(':tellWithCard', 'Ich habe dir Informationen an die Alexa-App geschickt.',
+            'Guild Wars', `Deine User-Id ist: ${userId}.`);
     }
 };
