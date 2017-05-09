@@ -23,7 +23,8 @@
   "license": "Unlicense",
   "homepage": "https://github.com/torstenwerner/alexa-gw2",
   "dependencies": {
-    "alexa-sdk": "^1.0.0"
+    "alexa-sdk": "^1.0.0",
+    "node-fetch": "^1.6.3"
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
